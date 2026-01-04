@@ -1,0 +1,343 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    overflow-x: scroll;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: black;
+    background-color: #ffffff;
+}
+
+/* Make page a column flex container so footer stays at bottom */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header,
+footer {
+    background-image: linear-gradient(to right, rgb(29, 59, 148), rgb(83, 166, 235));
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    margin-top: auto;
+    width: 100%;
+    background-image: linear-gradient(to right, rgb(45, 48, 56), rgb(82, 98, 112));
+}
+
+/* Allow main content to grow so footer is pushed to bottom */
+main {
+    flex: 1 0 auto;
+}
+
+nav {
+    margin-top: 10px;
+    text-align: center;
+}
+
+a {
+    position: relative;
+    margin-top: 2px;
+}
+
+nav a {
+    color: wheat;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: black;
+    transition: all 0.3s ease-in-out;
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+btn-delete {
+    cursor: pointer;
+    height: 10px;
+}
+
+.btn-delete {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-delete:hover {
+    background-color: #cc5555;
+    transform: scale(1.05);
+}
+
+.btn-toggle {
+    background-color: #9f6bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-toggle:hover {
+    background-color: #9f6bff;
+    transform: scale(1.05);
+}
+
+
+/* Flash Messages Styling */
+.alert {
+    padding: 15px 20px;
+    margin: 15px 0;
+    border-radius: 5px;
+    font-weight: 500;
+    border-left: 4px solid;
+    animation: slideIn 0.3s ease-in-out;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border-color: #28a745;
+}
+
+.alert-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-color: #f5c6cb;
+}
+
+.alert-info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    border-color: #bee5eb;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-box,
+.register-box {
+    max-width: 400px;
+    height: 50vh;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #9f6bff;
+    border-radius: 10%;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.text {
+    text-align: center;
+    color: rgb(67, 22, 141);
+    margin-bottom: 20px;
+}
+
+.text2 {
+    color: rgb(67, 19, 121);
+    font-weight: bold;
+    font-size: larger;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 4px;
+}
+
+.box {
+    text-align: center;
+}
+
+.btn-login {
+    background-color: #3e0e96;
+    margin: auto;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-login:hover {
+    background-color: #3e0e96;
+    transform: scale(1.05);
+}
+
+.btn-register {
+    background-color: #3e0e96;
+    margin: auto;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-register:hover {
+    background-color: #3e0e96;
+    transform: scale(1.05);
+}
+
+.registeration {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.registeration a {
+    color: #3e0e96;
+    text-decoration: none;
+}
+
+.register-box{
+    height: 60vh;
+    overflow: hidden;
+}
+
+.task-box {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.task-box h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.task-box table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.task-box th,
+.task-box td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.task-box th {
+    background-color: #9f6bff;
+    color: white;
+}
+
+.badge {
+    padding: 5px 10px;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+}
+
+.badge.completed {
+    background-color: #28a745;
+}
+
+.badge.pending {
+    background-color: #f16d6d;
+}
+
+.badge.working {
+    background-color: #f7db42;
+}
+.empty{
+    text-align: center;
+    font-size: 18px;
+    color: #c74242;
+    border: 2px solid #ff4c4c;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+.btn-add {
+    background-color: #3e0e96;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+.btn-clear {
+    margin: 5px auto;
+    background-color: #3e0e96;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+.add-task {
+    width: 70%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+.wrap {
+    text-align: center;
+}
+.wrap2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
